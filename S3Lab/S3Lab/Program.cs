@@ -14,7 +14,6 @@ namespace S3Lab
         }
         class Star
         {
-            Star star = new Star();
           public static string[] Stea(int n, string[] v)
             {
                 for (int i = 0; i <= n; i++)
