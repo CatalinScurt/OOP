@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+
 namespace LabS8
 {
     public class Load
@@ -81,6 +83,19 @@ namespace LabS8
             elev.Sort(new SortByAverage());
             Console.WriteLine("\n\nSortarea dupa medie:\n");
             print(elev);
-        }
+            using (StreamWriter outputFile = new StreamWriter(@"..\..\..\Data.out", true))
+            {
+                write(elev);
+                 void write(List<Elev> b)
+                {
+                    foreach (object x in b)
+                    {
+                        outputFile.Write(x);
+                        outputFile.WriteLine();
+                    }
+                    outputFile.WriteLine();
+                }
+            }
         }
     }
+}
